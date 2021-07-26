@@ -82,7 +82,7 @@ Widget _buildFullScreenVideo(
     Animation<double> animation,
     var controllerProvider) {
   return Scaffold(
-    resizeToAvoidBottomPadding: false,
+    //resizeToAvoidBottomPadding: false,
     body: Container(
       alignment: Alignment.center,
       color: Colors.black,
