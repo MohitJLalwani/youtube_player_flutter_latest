@@ -184,8 +184,8 @@ class YoutubePlayer extends StatefulWidget {
     bool webp = true,
   }) =>
       webp
-          ? 'https://img.youtube.com/vi/$videoId/hqdefault.jpg'
-          : "https://img.youtube.com/vi/$videoId/hqdefault.jpg";
+          ? 'https://img.youtube.com/vi/$videoId/mqdefault.jpg'
+          : "https://img.youtube.com/vi/$videoId/mqdefault.jpg";
 
   @override
   _YoutubePlayerState createState() => _YoutubePlayerState();
@@ -489,7 +489,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
         ),
         fit: BoxFit.cover,
         loadingBuilder: (_, child, progress) =>
-            progress == null ? child : Container(color: Colors.black),
+            progress == null ? child : Container(color: Colors.transparent),
         errorBuilder: (context, _, __) => Image.network(
           YoutubePlayer.getThumbnail(
             videoId: controller.metadata.videoId.isEmpty
@@ -499,7 +499,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
           ),
           fit: BoxFit.cover,
           loadingBuilder: (_, child, progress) =>
-              progress == null ? child : Container(color: Colors.black),
+              progress == null ? child : Container(color: Colors.transparent),
           errorBuilder: (context, _, __) => Container(),
           cacheWidth: 480,
           cacheHeight:360
